@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js"
 import { getAuth, signInWithEmailAndPassword , createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js"
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBQO-jjhBvLXu3gwqawWD3Yh3tCv8DreyQ",
@@ -11,6 +12,8 @@ const firebaseApp = initializeApp({
 })
 
 const auth = getAuth(firebaseApp)
+const db = getDatabase(firebaseApp)
+
 var signUp = document.getElementById('register')
 var login = document.getElementById('login')
 
@@ -22,6 +25,9 @@ signUp.addEventListener('click', () => {
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user
+    set(ref(db, 'users/' + user.uid), {
+      email: email
+    })
     alert("User created! Now please log in.")
   })
   .catch((error) => {
