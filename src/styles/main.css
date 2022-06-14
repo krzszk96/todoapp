@@ -56,4 +56,104 @@
 .login-wrap input[type="submit"]:hover {
   opacity: 0.8;
 }
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-height: 3vh;
+  padding: 20px;
+  background-color: #a7cbd7;
+  -webkit-box-shadow: 0px 4px 25px 0px #42445a;
+          box-shadow: 0px 4px 25px 0px #42445a;
+}
+
+nav h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: Arial;
+  color: #313131;
+}
+
+nav #userMail {
+  margin-left: 10px;
+}
+
+nav #logout {
+  border: none;
+  border-radius: 25px;
+  padding: 5px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial;
+  color: #fff;
+  background-color: #313131;
+  cursor: pointer;
+}
+
+nav #logout:hover {
+  opacity: 0.8;
+}
+
+.todo-conatiner {
+  margin-top: 50px;
+  margin-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.todo-conatiner label {
+  font-family: Arial;
+  color: #313131;
+}
+
+.todo-conatiner input[type="submit"] {
+  border: none;
+  border-radius: 25px;
+  padding: 5px 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial;
+  color: #fff;
+  background-color: #313131;
+  cursor: pointer;
+}
+
+.todo-conatiner input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.todo-conatiner input[type="text"] {
+  padding: 5px 20px;
+  margin-left: 10px;
+  min-width: 250px;
+  border: 1px solid #313131;
+  border-radius: 25px;
+}
+
+.todo-conatiner input[type="text"]:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+}
 /*# sourceMappingURL=main.css.map */

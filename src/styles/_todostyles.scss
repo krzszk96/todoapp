@@ -1,0 +1,40 @@
+.todo-conatiner{
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-conatiner label{
+  font-family: Arial;
+  color: $text-color-dark;
+}
+.todo-conatiner input[type="submit"]{
+  border: none;
+  border-radius: 25px;
+  padding: 5px 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial;
+  color: $text-color-bright;
+  background-color: $text-color-dark;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}
+.todo-conatiner input[type="text"]{
+  padding: 5px 20px;
+  margin-left: 10px;
+  min-width: 250px;
+  border: 1px solid $text-color-dark;
+  // border: none;
+  border-radius: 25px;
+
+  &:focus{
+    outline: none;
+  }
+}
