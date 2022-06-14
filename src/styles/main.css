@@ -7,10 +7,13 @@
   padding: 20px 50px;
   background-color: #a7cbd7;
   border-radius: 15px;
+  -webkit-box-shadow: 8px 8px 24px 0px #42445a;
+          box-shadow: 8px 8px 24px 0px #42445a;
 }
 
 .login-wrap h2 {
   font-size: 2rem;
+  font-weight: 900;
   font-family: Arial;
   color: #313131;
   margin-bottom: 50px;
@@ -40,7 +43,8 @@
   border: none;
   border-radius: 25px;
   padding: 10px 40px;
-  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 10px;
   font-size: 1rem;
   font-weight: 600;
   font-family: Arial;

@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js"
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"
+import { getAuth, signInWithEmailAndPassword , createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBQO-jjhBvLXu3gwqawWD3Yh3tCv8DreyQ",
@@ -11,23 +11,40 @@ const firebaseApp = initializeApp({
 })
 
 const auth = getAuth(firebaseApp)
+var signUp = document.getElementById('register')
+var login = document.getElementById('login')
 
-let email = 'krzszk96@gmail.com'
-let password = '123'
+signUp.addEventListener('click', () => {
 
-createUserWithEmailAndPassword(auth, email, password)
+  let email = document.getElementById('email').value
+  let password = document.getElementById('passwd').value
+
+  createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
     const user = userCredential.user
-    // ...
+    alert("User created! Now please log in.")
   })
   .catch((error) => {
     const errorCode = error.code
     const errorMessage = error.message
-    // ..
+    alert(errorMessage)
   })
+})
 
-  onAuthStateChanged(auth, user => {
-    if(user != null) console.log("logged in!")
-    if(user == null) console.log("no user!")
+login.addEventListener('click', () => {
+
+  let email = document.getElementById('email').value
+  let password = document.getElementById('passwd').value
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user
+    alert("Signed in!.")
   })
+  .catch((error) => {
+    const errorCode = error.code
+    const errorMessage = error.message
+    alert(errorMessage)
+  });
+})

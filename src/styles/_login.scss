@@ -6,9 +6,11 @@
   padding: 20px 50px;
   background-color: $primary-color;
   border-radius: 15px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 .login-wrap h2{
   font-size: 2rem;
+  font-weight: 900;
   font-family: Arial;
   color: $text-color-dark;
   margin-bottom: 50px;
@@ -34,7 +36,8 @@
   border: none;
   border-radius: 25px;
   padding: 10px 40px;
-  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 10px;
   font-size: 1rem;
   font-weight: 600;
   font-family: Arial;
