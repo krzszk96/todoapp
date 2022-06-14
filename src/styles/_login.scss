@@ -1,0 +1,48 @@
+.login-wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 50px;
+  background-color: $primary-color;
+  border-radius: 15px;
+}
+.login-wrap h2{
+  font-size: 2rem;
+  font-family: Arial;
+  color: $text-color-dark;
+  margin-bottom: 50px;
+}
+.login-wrap label{
+  font-family: Arial;
+  color: $text-color-dark;
+}
+.login-wrap input[type="text"],
+.login-wrap input[type="password"]{
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  min-width: 250px;
+  border: none;
+  border-radius: 25px;
+
+  &:focus{
+    outline: none;
+  }
+}
+.login-wrap input[type="submit"]{
+  border: none;
+  border-radius: 25px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial;
+  color: $text-color-bright;
+  background-color: $text-color-dark;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}
