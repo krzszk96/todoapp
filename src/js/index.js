@@ -105,8 +105,10 @@ tasks_container.addEventListener('click', (e) => {
 
   if(e.target.id == 'edit-btn') {
     if (element.contentEditable != 'true') {
+      e.target.innerHTML = 'Save'
       element.contentEditable = 'true'
     } else {
+      e.target.innerHTML = 'Edit'
       element.contentEditable = 'false'
       // update firebase element      
       update(dbRef,{ task: element.innerHTML })
