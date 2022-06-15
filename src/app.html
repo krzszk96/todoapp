@@ -20,9 +20,26 @@
 
   <div class="todo-conatiner">
     <label for="newtask">Please enter new task</label>
-    <input type="text" id="newtask">
-    <input type="submit" id="createnewtask">
+    <input type="text" id="newtask" placeholder="task name">
+    <input type="submit" id="createnewtask" value="add">
   </div>
+
+  <div class="todo-wrap">
+    <div class="task-nav">&nbsp;</div>
+    <div id="tasks-conatiner">
+      <div class="task-wrap">
+        <div class="wrap">
+          <input type="checkbox" class="checkbox" id="check-state">
+          <label class="todo-item">Test to do item</label>
+        </div>
+        <div class="wrap">
+          <button class="delete-btn" id="delete-btn">Delete</button>
+          <button class="edit-btn" id="edit-btn">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </body>
 

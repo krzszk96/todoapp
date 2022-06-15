@@ -78,7 +78,7 @@ nav h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 900;
   font-family: Arial;
   color: #313131;
@@ -106,7 +106,6 @@ nav #logout:hover {
 
 .todo-conatiner {
   margin-top: 50px;
-  margin-left: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,14 +118,15 @@ nav #logout:hover {
 }
 
 .todo-conatiner label {
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
   color: #313131;
 }
 
 .todo-conatiner input[type="submit"] {
   border: none;
   border-radius: 25px;
-  padding: 5px 40px;
+  padding: 10px 40px;
   margin-right: 10px;
   margin-left: 10px;
   font-size: 1rem;
@@ -146,11 +146,102 @@ nav #logout:hover {
   margin-left: 10px;
   min-width: 250px;
   border: 1px solid #313131;
+  font-size: 1.2rem;
   border-radius: 25px;
+  color: #313131;
 }
 
 .todo-conatiner input[type="text"]:focus {
   outline: none;
+}
+
+.todo-conatiner input[type=checkbox]:checked + todo-item {
+  text-decoration: line-through;
+}
+
+.todo-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+.task-nav {
+  width: 80%;
+  background-color: #a7cbd7;
+  border-radius: 5px;
+}
+
+#tasks-conatiner {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.task-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0;
+}
+
+.checkbox {
+  margin-left: 10px;
+}
+
+.todo-item {
+  margin: 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  color: #313131;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.delete-btn, .edit-btn {
+  border: none;
+  border-radius: 25px;
+  padding: 5px 40px;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial;
+  color: #fff;
+  background-color: #313131;
+  cursor: pointer;
+}
+
+.delete-btn:hover, .edit-btn:hover {
+  opacity: 0.8;
+}
+
+.delete-btn {
+  background-color: #f76463;
 }
 
 body {
