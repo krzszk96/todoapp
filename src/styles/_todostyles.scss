@@ -39,9 +39,6 @@
     outline: none;
   }
 }
-.todo-conatiner input[type=checkbox]:checked + todo-item{
-  text-decoration: line-through;
-}
 .todo-wrap{
   display: flex;
   flex-direction: column;
@@ -96,6 +93,6 @@
 .delete-btn{
   background-color: $color-red
 }
-#newtaskitem[type=checkbox]:checked + label{
-  text-decoration: line-through; 
+input[type="checkbox"]:checked + label.todo-item{
+  text-decoration: line-through;
 }
