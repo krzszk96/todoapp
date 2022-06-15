@@ -3,6 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 .todo-conatiner label{
   font-family: Arial, Helvetica, sans-serif;
@@ -25,6 +29,11 @@
   &:hover{
     opacity: 0.8;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px 30px;
+    font-size: 0.8rem;
+  }
 }
 .todo-conatiner input[type="text"]{
   padding: 5px 20px;
@@ -38,6 +47,11 @@
   &:focus{
     outline: none;
   }
+
+  @media only screen and (max-width: 768px) {
+    margin: 20px 0;
+    font-size: 1rem;
+  }
 }
 .todo-wrap{
   display: flex;
@@ -45,6 +59,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+  }
 }
 .task-nav{
   width: 80%;
@@ -70,6 +88,13 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   color: $text-color-dark;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  
+  @media only screen and (max-width: 768px) {
+    max-width: 120px;
+  }
 }
 .wrap{
   display: flex;
@@ -88,6 +113,11 @@
 
   &:hover{
     opacity: 0.8;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 }
 .delete-btn{

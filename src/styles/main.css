@@ -11,6 +11,12 @@
           box-shadow: 8px 8px 24px 0px #42445a;
 }
 
+@media only screen and (max-width: 768px) {
+  .login-wrap {
+    padding: 20px 20px;
+  }
+}
+
 .login-wrap h2 {
   font-size: 2rem;
   font-weight: 900;
@@ -57,6 +63,13 @@
   opacity: 0.8;
 }
 
+@media only screen and (max-width: 768px) {
+  .login-wrap input[type="submit"] {
+    padding: 5px 40px;
+    font-size: 0.8rem;
+  }
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,6 +96,8 @@ nav {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    max-height: 8vh;
+    padding: 25px;
   }
 }
 
@@ -97,6 +112,13 @@ nav h2 {
   font-weight: 900;
   font-family: Arial;
   color: #313131;
+}
+
+@media only screen and (max-width: 768px) {
+  nav h2 {
+    font-size: 0.8rem;
+    margin: 0;
+  }
 }
 
 nav #userMail {
@@ -122,6 +144,7 @@ nav #logout:hover {
 @media only screen and (max-width: 768px) {
   nav #logout {
     max-width: 150px;
+    font-size: 0.8rem;
   }
 }
 
@@ -136,6 +159,15 @@ nav #logout:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-conatiner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .todo-conatiner label {
@@ -162,6 +194,13 @@ nav #logout:hover {
   opacity: 0.8;
 }
 
+@media only screen and (max-width: 768px) {
+  .todo-conatiner input[type="submit"] {
+    padding: 10px 30px;
+    font-size: 0.8rem;
+  }
+}
+
 .todo-conatiner input[type="text"] {
   padding: 5px 20px;
   margin-left: 10px;
@@ -174,6 +213,13 @@ nav #logout:hover {
 
 .todo-conatiner input[type="text"]:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-conatiner input[type="text"] {
+    margin: 20px 0;
+    font-size: 1rem;
+  }
 }
 
 .todo-wrap {
@@ -191,6 +237,12 @@ nav #logout:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-wrap {
+    margin-top: 20px;
+  }
 }
 
 .task-nav {
@@ -232,6 +284,15 @@ nav #logout:hover {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   color: #313131;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-item {
+    max-width: 120px;
+  }
 }
 
 .wrap {
@@ -255,6 +316,13 @@ nav #logout:hover {
 
 .delete-btn:hover, .edit-btn:hover {
   opacity: 0.8;
+}
+
+@media only screen and (max-width: 768px) {
+  .delete-btn, .edit-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
 }
 
 .delete-btn {

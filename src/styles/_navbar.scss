@@ -10,6 +10,8 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    max-height: 8vh;
+    padding: 25px;
   }
 }
 nav h2{
@@ -19,6 +21,11 @@ nav h2{
   font-weight: 900;
   font-family: Arial;
   color: $text-color-dark;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    margin: 0;
+  }
 }
 nav #userMail{
   margin-left: 10px;
@@ -40,5 +47,6 @@ nav #logout{
 
   @media only screen and (max-width: 768px) {
     max-width: 150px;
+    font-size: 0.8rem;
   }
 }
