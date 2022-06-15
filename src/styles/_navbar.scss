@@ -5,6 +5,12 @@ nav{
   padding: 20px;
   background-color: $primary-color;
   box-shadow: 0px 4px 25px 0px rgba(66, 68, 90, 1);
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
 nav h2{
   display: flex;
@@ -30,5 +36,9 @@ nav #logout{
 
   &:hover{
     opacity: 0.8;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 150px;
   }
 }

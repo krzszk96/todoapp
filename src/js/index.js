@@ -1,5 +1,5 @@
 import { firebaseApp } from "./app_init.js"
-import { getAuth, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"
+import { getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"
 import { getDatabase, ref, set, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js"
 
 const auth = getAuth(firebaseApp)
@@ -24,20 +24,6 @@ let newtask = document.getElementById('newtask') //target task input
 // add new task to the list
 add_task.addEventListener('click', () => {
   if (newtask.value == '') return alert("Please type task name") //check if task is not empty
-  
-  let task_html = document.createElement('div')
-  task_html.classList.add('task-wrap')
-  task_html.innerHTML =`
-      <div class="wrap">
-        <input type="checkbox" class="checkbox" id="check-state">
-        <label class="todo-item">${newtask.value}</label>
-      </div>
-      <div class="wrap">
-        <button class="delete-btn" id="delete-btn">Delete</button>
-        <button class="edit-btn" id="edit-btn">Edit</button>
-      </div>`
-  tasks_container.appendChild(task_html)
-   
 
   // save to firebase database
   let userId = auth.currentUser.uid
@@ -47,6 +33,21 @@ add_task.addEventListener('click', () => {
     task: newtask.value,
     state: 'pending'
   })
+  
+  // display task in the browser
+  let task_html = document.createElement('div')
+  task_html.classList.add('task-wrap')
+  task_html.setAttribute('id', taskRef.key)
+  task_html.innerHTML =`
+      <div class="wrap">
+        <input type="checkbox" class="checkbox" id="check-state">
+        <label class="todo-item">${newtask.value}</label>
+      </div>
+      <div class="wrap">
+        <button class="delete-btn" id="delete-btn">Delete</button>
+        <button class="edit-btn" id="edit-btn">Edit</button>
+      </div>`
+  tasks_container.appendChild(task_html)  
   
   // reset input for new task
   newtask.value = '' 
@@ -60,7 +61,6 @@ function displayDataFromFirebase(uid){
   onValue(dbRef, (snapshot) => {
     snapshot.forEach((childSnapshot) => {
       const child = childSnapshot.val()
-      console.log(child.state);
       const childkey = childSnapshot.key
       let task_html = document.createElement('div')
       task_html.classList.add('task-wrap')
@@ -84,8 +84,8 @@ function displayDataFromFirebase(uid){
 
 // delete item
 tasks_container.addEventListener('click', (e) => {
-  
-  let element = e.target.parentNode.parentNode
+  let element = e.target.parentElement.parentElement
+
   if(e.target.id == 'delete-btn') {
     element.remove()  
   
@@ -117,14 +117,13 @@ tasks_container.addEventListener('click', (e) => {
 // tick item as done
 tasks_container.addEventListener('click', (e) => {
   let checkbox = e.target.parentNode.parentNode.querySelector('input')
-
+    
   let userId = auth.currentUser.uid //used for firebase
   let elementid = e.target.parentNode.parentNode.id // used for firebase
   let dbRef = ref(db, 'users/' + userId + '/tasks/' + elementid ) //path to firebase element
 
-  if(checkbox.checked) console.log("yes");
-
   if(e.target.id == 'check-state') {
+
     if(!checkbox.checked) {
       update(dbRef,{ state: 'pending' })
     } else {
@@ -133,3 +132,12 @@ tasks_container.addEventListener('click', (e) => {
   }  
 })
 
+// logout from app
+let logout_btn = document.getElementById('logout')
+logout_btn.addEventListener('click', ()=>{
+  signOut(auth).then(() => {
+    window.location.href='index.html'
+  }).catch((error) => {
+    alert(error)
+  });
+})
